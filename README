@@ -1,0 +1,9 @@
+Cinemania is a demonstration project to practise Django and 
+JQuery and with no practical purpose
+
+It simulates a working cinema, where its managers want to be 
+able to schedule movies for specific dates and in certain 
+rooms.
+
+Customers have the ability to see the schedule and to 
+purchase tickets and even to choose their own seat.

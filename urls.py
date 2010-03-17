@@ -5,13 +5,8 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Example:
-    # (r'^cinemania/', include('cinemania.foo.urls')),
-
-    # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
-    # to INSTALLED_APPS to enable admin documentation:
-    # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
+    (r'^static/(?P<path>.*)$', 'django.views.static.serve',
+        {'document_root': '/home/vkhemlan/django-projects/cinemania/static/'}),
+    (r'^catalog/', include('cinemania.catalog.urls')),
     (r'^admin/', include(admin.site.urls)),
 )

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <link rel="stylesheet" href="/static/styles/styles.css" />
+    <script type="text/javascript" src="/static/scripts/jquery-1.4.2.js"></script>
+    <script type="text/javascript" src="/static/scripts/jquery.timers-1.2.js"></script>
+    <script type="text/javascript" src="/static/scripts/base_scripts.js"></script>
+    {% block custom_scripts %}
+    {% endblock %}
+    <title>{% block title %}CineMania - Manager Interface{% endblock %}</title>
+</head>
+
+<body>
+    <div id="page_container">
+        <div id="header">
+            <div id="header_logo_container">
+                <img src="/static/pics/artwork/logo_120.png" align="left">
+            </div>
+            <h2>CineMania</h2>
+            {% block subtitle %}{% endblock %}
+        </div>
+        {% block customer_login %}{% endblock %}
+        {% block sidebar %}
+        {% endblock %}
+
+        <div id="content">
+            <div class="roundedcornr_box_708581" id="content_div">
+               <div class="roundedcornr_top_708581"><div></div></div>
+                  <div class="roundedcornr_content_708581">
+                    {% if error_message %}
+                        <div id="error_message">
+                            {{ error_message }}
+                        </div>
+                    {% endif %}
+            {% block content %}{% endblock %}
+                  </div>
+               <div class="roundedcornr_bottom_708581"><div></div></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h3>Login</h3>
+<hr />
+<p>Please enter your login information</p>
+<form method="post">
+    <table>
+        {% for field in form %}
+            <tr>
+                <td>
+                    {{ field.label }}:
+                </td>
+                <td>
+                    {{ field }}
+                </td>
+                <td>
+                    {% for error in field.errors %}
+                        <span class="error_detail">{{ error }}</span>
+                    {% endfor %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <input type="submit" value="Login"/>
+</form>
+
+{% endblock %}
